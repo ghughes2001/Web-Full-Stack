@@ -41,19 +41,24 @@ li:hover {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.title {
+    background-color: white;
+    color: var(--navHover);
+    font-size: 45px;
+    padding-bottom: 25px;
+}
 .logging-in {
     font-size: 30px;
-    display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 10%;
+    margin-top: 3%;
     background-color: white;
-    padding-top: 3%;
+    padding-top: 4%;
     padding-right: 5%;
     padding-left: 5%;
-    padding-bottom: 8%;
-    height: 200px;
-    width: 200px;
+    padding-bottom: 12%;
+    height: 300px;
+    width: 500px;
     text-align: center;
     color: var(--navHover);
     opacity: 0.7;
@@ -76,6 +81,9 @@ input[type=password] {
     border: 2px solid var(--navHover);
     box-sizing: border-box;
     cursor: pointer;
+}
+.buttons {
+    padding-top: 5%;
 }
 button {
     background-color: var(--navHover);

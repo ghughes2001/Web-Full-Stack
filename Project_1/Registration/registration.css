@@ -41,19 +41,25 @@ li:hover {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.title {
+    background-color: white;
+    color: var(--navHover);
+    font-size: 40px;
+    padding-bottom: 25px;
+}
 .register-account {
-    font-size: 30px;
+    font-size: 28px;
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 7%;
+    margin-top: 3%;
     background-color: white;
     padding-top: 3%;
     padding-right: 5%;
     padding-left: 5%;
     padding-bottom: 20%;
     height: 200px;
-    width: 200px;
+    width: 500px;
     text-align: center;
     color: var(--navHover);
     opacity: 0.7;
@@ -76,6 +82,9 @@ input[type=password] {
     border: 2px solid var(--navHover);
     box-sizing: border-box;
     cursor: pointer;
+}
+.buttons {
+    padding-top: 5%;
 }
 button {
     background-color: var(--navHover);

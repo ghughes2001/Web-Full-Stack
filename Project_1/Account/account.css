@@ -41,3 +41,45 @@ li:hover {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.title {
+    color: var(--navHover);
+    font-size: 40px;
+    padding-bottom: 25px;
+}
+.section {
+    background-color: white;
+    color: var(--navHover);
+    font-size: 20px;
+    padding-bottom: 25px;
+    text-align: center;
+    margin-top: 3%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 8%;
+    opacity: 0.7;
+}
+input[type=text] {
+    width: 40%;
+    padding: 13px 30px;
+    margin: 8px;
+    display: inline-block;
+    border: 2px solid var(--navHover);
+    box-sizing: border-box;
+    color: var(--navHover);
+    cursor: pointer;
+}
+.buttons {
+    padding-top: 2%;
+}
+button {
+    background-color: var(--navHover);
+    color: white;
+    padding: 18px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+}
+button:hover {
+    opacity: 0.8;
+}
