@@ -51,3 +51,11 @@ li:hover {
     margin-right: auto;
     margin-left: auto;
 }
+.bottom {
+    background-color: white;
+    color: var(--navHover);
+    text-align: center;
+    margin-top: 18.9%;
+    padding: 3px;
+    opacity: 0.7;
+}

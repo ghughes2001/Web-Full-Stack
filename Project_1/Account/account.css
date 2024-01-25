@@ -55,12 +55,12 @@ li:hover {
     margin-top: 3%;
     margin-left: 15%;
     margin-right: 15%;
-    margin-bottom: 8%;
     opacity: 0.7;
 }
 input[type=text] {
     width: 40%;
-    padding: 13px 30px;
+    height: 14px;
+    padding: 15px 30px;
     margin: 8px;
     display: inline-block;
     border: 2px solid var(--navHover);
@@ -82,4 +82,12 @@ button {
 }
 button:hover {
     opacity: 0.8;
+}
+.bottom {
+    background-color: white;
+    color: var(--navHover);
+    text-align: center;
+    margin-top: 4.9%;
+    padding: 3px;
+    opacity: 0.7;
 }
