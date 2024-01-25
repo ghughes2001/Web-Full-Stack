@@ -29,7 +29,7 @@ a:visited
 {
     color: var(--links);
 }
-li:hover {
+a:hover {
     color: var(--navHover);
     cursor: pointer;
     opacity: 0.8;
@@ -68,6 +68,11 @@ input[type=text] {
     color: var(--navHover);
     cursor: pointer;
 }
+select {
+    background-color: rgba(255, 255, 255, 0.93);
+    opacity: 0.7;
+    border: 2px solid var(--navHover);
+}
 .buttons {
     padding-top: 2%;
 }
@@ -87,7 +92,7 @@ button:hover {
     background-color: white;
     color: var(--navHover);
     text-align: center;
-    margin-top: 4.9%;
+    margin-top: 3.2%;
     padding: 3px;
     opacity: 0.7;
 }

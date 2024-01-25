@@ -29,7 +29,7 @@ a:visited
 {
     color: var(--links);
 }
-li:hover {
+a:hover {
     color: var(--navHover);
     opacity: 0.8;
     cursor: pointer;
