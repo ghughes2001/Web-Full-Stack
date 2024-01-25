@@ -7,7 +7,7 @@ body, html {
     margin: 0;
     font-family: 'Trebuchet MS';
 }
-.nav {
+.account-nav {
     list-style-type: none;
     margin: 0;
     overflow: auto;
@@ -34,8 +34,8 @@ li:hover {
     cursor: pointer;
     opacity: 0.8;
 }
-.home-img {
-    background-image: url("./images/Air-Fryer-Glazed-Donuts-New-2.jpg");
+.account-img {
+    background-image: url("../images/Air-Fryer-Glazed-Donuts-New-2.jpg");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
