@@ -101,7 +101,9 @@ button:hover {
     background-color: white;
     color: var(--navHover);
     text-align: center;
-    margin-top: 6.2%;
-    padding: 3px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     opacity: 0.7;
 }
