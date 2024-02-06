@@ -17,7 +17,7 @@ body, html {
 li {
     display: inline-block;
     font-size: 55px;
-    padding-left: 50px;
+    padding-left: 60px;
     padding-top: 15px;
     padding-bottom: 15px;
     color: var(--navHover);
