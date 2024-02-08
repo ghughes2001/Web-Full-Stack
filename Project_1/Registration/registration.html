@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="registration.css" />
 </head>
 <body>
     <div class="registration-img">
-        <ul class="registration-nav">
-            <li><a href="..//index.html" style="text-decoration: none;"> Home </a></li>
-            <li><a href="./registration.html" style="text-decoration: none;"> Registration </a></li>
-            <li><a href="../Login/login.html" style="text-decoration: none;"> Login </a></li>
-            <li><a href="../Account/account.html" style="text-decoration: none;"> Account </a></li>
-            <li><a href="#" style="text-decoration: none;"> Logout </a></li>
-        </ul>
+        <div class="registration-nav" id="registration-nav">
+            <a href="..//index.html"> Home </a>
+            <a href="./registration.html" class="active"> Registration </a>
+            <a href="../Login/login.html"> Login </a>
+            <a href="../Account/account.html"> Account </a>
+            <a href="#" style="text-decoration: none;"> Logout </a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+        </div>
         <form>
             <div class="register-account">
                 <div class="title"><label><b> CREATE ACCOUNT </b></label></div>
@@ -37,5 +39,17 @@
             </p>
         </footer>
     </div>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("registration-nav");
+            if (x.className === "registration-nav") {
+                x.className += " responsive";
+            }
+            else {
+                x.className = "registration-nav";
+            }
+        }
+    </script>
 </body>
 </html>
