@@ -1,0 +1,80 @@
+:root {
+    --links: rgb(143, 143, 143);
+}
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Trebuchet MS';
+}
+.home-img {
+    background-image: url("./images/film-background-8jub8e0yf7p33omg.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.nav {
+    overflow: hidden;
+    background-color: grey;
+    list-style-type: none;
+    margin: 0;
+    background: #fffffff7;
+    opacity: 0.7;
+    font-size: 50px;
+    color: var(--links);
+    padding-bottom: 10px;
+    text-align: center;
+}
+a {
+    color: var(--links);
+    text-decoration: none;
+}
+nav a:hover {
+    background-color: white;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.nav a.active {
+    background-color: white;
+    color: var(--links);
+}
+  
+.nav .icon {
+    display: none;
+}
+.foot {
+    background-color: white;
+    color: var(--links);
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: 0.7;
+}
+@media screen and (max-width: 600px) {
+    .nav {
+        text-align: left;
+    }
+    .nav a:not(:first-child) {display: none;}
+    .nav a.icon {
+      float: right;
+      display: block;
+    }
+}
+@media screen and (max-width: 600px) {
+    .nav {
+        text-align: left;
+    }
+    .nav.responsive {position: relative;}
+    .nav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+}
+.nav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+}
