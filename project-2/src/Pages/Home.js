@@ -1,6 +1,6 @@
 import React from 'react'
 import "../CSS/Home.css";
-import "../JSS/Home.js"
+import "../JSS/HomeMobile"
 
 const Home = () => {
     return (
@@ -23,5 +23,4 @@ const Home = () => {
     );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Home />);
+export default Home;

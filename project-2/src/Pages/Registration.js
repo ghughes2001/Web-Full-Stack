@@ -1,6 +1,6 @@
 import React from 'react'
 import "../CSS/Registration.css";
-import "../JSS/Registration.js"
+import "../JSS/RegistrationMobile"
 
 const RegistrationForm = () => {
     return (
