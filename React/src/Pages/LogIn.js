@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import "../CSS/LogIn.css";
 
 function clearInputFeild() {
@@ -9,17 +10,34 @@ const LogInForm = (props) => {;
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const { handleLogin } = props;
+    const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
-        event.preventDefault();
-        handleLogin(true);
+        try
+        {
+            event.preventDefault();
+            handleLogin(true)
+            const response = await fetch("http://localhost:8080/login", {
+                method: "POST",
+                headers: {"Accept": "application/json", "Content-Type": "application/json"},
+                body: JSON.stringify({username, password})
+            });
+            const status = response.status;
+            const responseJSON = await response.json();
+            console.log("responseJSON", responseJSON);
 
-        console.log(`The name you entered was: ${username}`);
-        console.log(`The password you entered was: ${password}`);
+            if (status == 200) {
+                navigate("/");
+            }
+            else {
+                alert("Incorrct credentials");
+            }
+        } catch(e) {
+            alert("Error: ${e.message}");
+        }
     }
-
     return (
-        <form onSubmit={handleSubmit} id="cc">
+        <form id="cc">
                 <div className="logging-in">
                     <div className="log-title"><label className="log-title"><b> LOG IN </b></label></div>
                     <label className='vv' htmlFor="user"><b> Username </b></label>
@@ -30,7 +48,7 @@ const LogInForm = (props) => {;
 
                     <div className="log-buttons">
                         <button type="reset" value="Reset" onClick={clearInputFeild}> Clear </button>
-                        <button type="submit" value="Submit"> Sign In </button>
+                        <button type="submit" value="Submit" onClick={event => handleSubmit(event)}> Sign In </button>
                     </div>
                 </div>
             </form>
