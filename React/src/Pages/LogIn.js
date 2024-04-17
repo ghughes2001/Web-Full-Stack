@@ -26,14 +26,14 @@ const LogInForm = (props) => {;
             const responseJSON = await response.json();
             console.log("responseJSON", responseJSON);
 
-            if (status == 200) {
+            if (status === 200) {
                 navigate("/");
             }
             else {
                 alert("Incorrct credentials");
             }
         } catch(e) {
-            alert("Error: ${e.message}");
+            alert(e);
         }
     }
     return (

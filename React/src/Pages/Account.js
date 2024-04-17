@@ -17,15 +17,13 @@ const AccountForm = () => {
     const [zipCode, setZipCode] = useState("");
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
-    const { handleLogin } = props;
     const navigate = useNavigate();
 
-    const handleSubmit = async (event) => {
+    const submit = async (event) => {
         try
         {
             event.preventDefault();
-            handleLogin(true)
-            const response = await fetch("http://localhost:8080/login", {
+            const response = await fetch("http://localhost:8080/account", {
                 method: "POST",
                 headers: {"Accept": "application/json", "Content-Type": "application/json"},
                 body: JSON.stringify({firstName, LastName, addressOne, addressTwo, city, states, zipCode, phone, email})
@@ -34,14 +32,14 @@ const AccountForm = () => {
             const responseJSON = await response.json();
             console.log("responseJSON", responseJSON);
 
-            if (status == 200) {
+            if (status === 200) {
                 navigate("/");
             }
             else {
                 alert("Incorrct credentials");
             }
         } catch(e) {
-            alert("Error: ${e.message}");
+            alert(e);
         }
     }
     return (
@@ -50,32 +48,32 @@ const AccountForm = () => {
                 <div className="acc-title"><label className="acc-title"><b> ACCOUNT </b></label></div>
 
                 <label htmlFor="firstName"><b> Name </b></label>
-                <input className='ll' type="text" placeholder="Enter Name" name="firstName" value={password} onChange={({ target }) => setFirstName(target.value)} required />
+                <input className='ll' type="text" placeholder="Enter Name" name="firstName" value={firstName} onChange={({ target }) => setFirstName(target.value)} required />
 
                 <br />
 
                 <label htmlFor="lastName"><b> Last Name </b></label>
-                <input className='ll' type="text" placeholder="Last Name" name="lastName" value={password} onChange={({ target }) => setLastName(target.value)} required />
+                <input className='ll' type="text" placeholder="Last Name" name="lastName" value={LastName} onChange={({ target }) => setLastName(target.value)} required />
 
                 <br />
 
                 <label htmlFor="addressOne"><b> Address 1 </b></label>
-                <input className='ll' type="text" placeholder="Address 1" name="addressOne" value={password} onChange={({ target }) => setAddressOne(target.value)} required />
+                <input className='ll' type="text" placeholder="Address 1" name="addressOne" value={addressOne} onChange={({ target }) => setAddressOne(target.value)} required />
 
                 <br />
 
                 <label htmlFor="addressTwo"><b> Address 2 </b></label>
-                <input className='ll' type="text" placeholder="Address 2" name="addressTwo" value={password} onChange={({ target }) => setAddressTwo(target.value)} required />
+                <input className='ll' type="text" placeholder="Address 2" name="addressTwo" value={addressTwo} onChange={({ target }) => setAddressTwo(target.value)} />
 
                 <br />
 
                 <label htmlFor="city"><b> City </b></label>
-                <input className='ll' type="text" placeholder="City" name="city" value={password} onChange={({ target }) => setCity(target.value)} required />
+                <input className='ll' type="text" placeholder="City" name="city" value={city} onChange={({ target }) => setCity(target.value)} required />
 
                 <br />
 
                 <label htmlFor="state"><b> State </b></label>
-                <select name="state" onChange={({ target }) => setStates(target.value)} required>
+                <select name="state" value={states} onChange={({ target }) => setStates(target.value)} required>
                     <option value="---">---</option>
                     <option value="Alabama">Alabama</option>
                     <option value="Alaska">Alaska</option>
@@ -137,23 +135,23 @@ const AccountForm = () => {
                 <br />
 
                 <label htmlFor="zip"><b> Zip Code </b></label>
-                <input className='ll' type="text" placeholder="Zip Code" name="zip" value={password} onChange={({ target }) => setZipCode(target.value)} required />
+                <input className='ll' type="text" placeholder="Zip Code" name="zip" value={zipCode} onChange={({ target }) => setZipCode(target.value)} required />
 
                 <br />
 
                 <label htmlFor="phone"><b> Phone Number </b></label>
-                <input className='ll' type="text" placeholder="Phone Number" name="phone" value={password} onChange={({ target }) => setPhone(target.value)} required />
+                <input className='ll' type="text" placeholder="Phone Number" name="phone" value={phone} onChange={({ target }) => setPhone(target.value)} required />
                 
                 <br />
                 
                 <label htmlFor="email"><b> Email </b></label>
-                <input className='ll' type="text" placeholder="Email" name="email" value={password} onChange={({ target }) => setEmail(target.value)} required />
+                <input className='ll' type="text" placeholder="Email" name="email" value={email} onChange={({ target }) => setEmail(target.value)} required />
                 
                 <br />
                 
                 <div className="acc-buttons">
                     <button type="reset" value="Reset" onClick={clearInputFeild}> Clear </button>
-                    <button type="submit" value="Submit" onClick={event => handleSubmit(event)}> Submit </button>
+                    <button type="submit" value="Submit" onClick={event => submit(event)}> Submit </button>
                 </div>
                 </div>
             </form>

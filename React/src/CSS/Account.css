@@ -52,7 +52,7 @@ button:hover {
 .acc-title {
     background: white;
     color: var(--links);
-    font-size: 45px;
+    font-size: 40px;
     padding-bottom: 10px;
 }
 label {
@@ -69,7 +69,66 @@ option {
     background-color: grey;
     opacity: 0.7;
 }
-@media screen and (max-width: 600px) {
+
+
+@media screen and (max-width: 820px) {
+    .acc-section {
+        font-size: 10px;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 5%;
+        background: white;
+        height: 300px;
+        width: 300px;
+        text-align: center;
+        color: var(--links);
+        opacity: 0.7;
+    }
+    input[type=text] {
+        font-size: 5px;
+        width: 70%;
+        padding: 3px 2px;
+        margin: 7px;
+        display: inline-block;
+        border: 2px solid grey;
+        box-sizing: border-box;
+        color: var(--links);
+        cursor: pointer;
+    }
+    input[type=password] {
+        font-size: 10px;
+        width: 70%;
+        padding: 6px 2px;
+        margin: 10px;
+        display: inline-block;
+        border: 2px solid grey;
+        box-sizing: border-box;
+        color: var(--links);
+        cursor: pointer;
+    }
+    .acc-title {
+        font-size: 20px;
+    }
+    button {
+        font-size: 10px;
+        background-color: grey;
+        color: white;
+        padding: 10px 0px;
+        margin: 8px;
+        border: none;
+        cursor: pointer;
+        width: 30%;
+    }
+    button:hover {
+        opacity: 0.8;
+    }
+    label {
+        font-size: 8px;
+    }
+}
+
+@media screen and (min-width: 820px) and (max-width: 1024px) {
     .acc-section {
         font-size: 15px;
         display: block;

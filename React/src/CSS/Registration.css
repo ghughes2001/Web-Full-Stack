@@ -23,7 +23,7 @@ body, html {
     padding-top: 3%;
     padding-right: 5%;
     padding-left: 5%;
-    height: 520px;
+    height: 530px;
     width: 400px;
     text-align: center;
     color: var(--links);
@@ -74,18 +74,54 @@ label {
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 820px) {
     .register-account {
         font-size: 20px;
         display: block;
         margin-right: auto;
         margin-left: auto;
-        margin-top: 14%;
+        margin-top: 2%;
         background: white;
         padding-top: 3%;
         padding-right: 5%;
         padding-left: 5%;
-        height: 430px;
+        height: 400px;
+        width: 300px;
+        text-align: center;
+        color: var(--links);
+        opacity: 0.7;
+    }
+    input[type=password] {
+        font-size: 10px;
+        width: 70%;
+        padding: 6px 2px;
+        margin: 10px;
+        display: inline-block;
+        border: 2px solid grey;
+        box-sizing: border-box;
+        color: var(--links);
+        cursor: pointer;
+    }
+    .reg-title {
+        font-size: 30px;
+    }
+    .oo {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1024px) {
+    .register-account {
+        font-size: 20px;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 2%;
+        background: white;
+        padding-top: 3%;
+        padding-right: 5%;
+        padding-left: 5%;
+        height: 400px;
         width: 300px;
         text-align: center;
         color: var(--links);

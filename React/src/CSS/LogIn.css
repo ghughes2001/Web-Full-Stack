@@ -74,18 +74,56 @@ label {
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 830px) {
     .logging-in {
         font-size: 30px;
         margin-right: auto;
         margin-left: auto;
-        margin-top: 20%;
+        margin-top: 2%;
         background: white;
         padding-top: 4%;
         padding-right: 5%;
         padding-left: 5%;
         padding-bottom: 12%;
-        height: 280px;
+        height: 290px;
+        width: 300px;
+        text-align: center;
+        color: var(--links);
+        opacity: 0.7;
+    }
+    .log-title {
+        background: white;
+        color: var(--links);
+        font-size: 30px;
+        padding-bottom: 2px;
+    }
+    input[type=text] {
+    width: 80%;
+    padding: 13px 30px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid grey;
+    box-sizing: border-box;
+    color: var(--links);
+    cursor: pointer;
+}
+.vv {
+    font-size: 20px;
+}
+}
+
+@media screen and (min-width: 900px) and (max-width: 1024px) {
+    .logging-in {
+        font-size: 30px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 2%;
+        background: white;
+        padding-top: 4%;
+        padding-right: 5%;
+        padding-left: 5%;
+        padding-bottom: 12%;
+        height: 260px;
         width: 300px;
         text-align: center;
         color: var(--links);
