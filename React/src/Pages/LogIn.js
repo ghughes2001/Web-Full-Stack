@@ -29,6 +29,14 @@ const LogInForm = (props) => {;
             if (status === 200) {
                 navigate("/");
             }
+            else if (status === 400)
+            {
+                alert("No user account exists");
+            }
+            else if (status === 401)
+            {
+                alert("Either password or username doesn't match");
+            }
             else {
                 alert("Incorrct credentials");
             }

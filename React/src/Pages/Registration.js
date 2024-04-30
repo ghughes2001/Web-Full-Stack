@@ -30,6 +30,10 @@ const RegistrationForm = (eve) => {
                 if (status === 201) {
                     navigate("/");
                 }
+                else if (status === 409)
+                {
+                    alert("That user already has an account");
+                }
                 else {
                     alert("Incorrct credentials");
                 }

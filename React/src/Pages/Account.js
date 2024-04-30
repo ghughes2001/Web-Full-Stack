@@ -23,16 +23,51 @@ const AccountForm = () => {
         try
         {
             event.preventDefault();
-            const response = await fetch("http://localhost:8080/account", {
+            const responseGET = await fetch("http://localhost:8080/account", {
+                method: "GET",
+                headers: {"Accept": "application/json", "Content-Type": "application/json"},
+                body: JSON.stringify({firstName, LastName, addressOne, addressTwo, city, states, zipCode, phone, email})
+            });
+            const statusGet = responseGET.status;
+            const responseJSONGet = await responseGET.json();
+            console.log("responseJSONGet", responseJSONGet);
+            if (statusGet === 200) {
+                navigate("/");
+            }
+            else if (statusGet === 204) {
+                alert("No data for that account");
+            }
+            else {
+                alert("Incorrct credentials");
+            }
+
+            const responsePut = await fetch("http://localhost:8080/account", {
+                method: "PUT",
+                headers: {"Accept": "application/json", "Content-Type": "application/json"},
+                body: JSON.stringify({firstName, LastName, addressOne, addressTwo, city, states, zipCode, phone, email})
+            });
+            const statusPut = responsePut.status;
+            const responseJSONPut = await responsePut.json();
+            console.log("responseJSONPut", responseJSONPut);
+            if (statusPut === 200) {
+                navigate("/");
+            }
+            else if (statusPut === 404) {
+                alert("No existing data for that account");
+            }
+            else {
+                alert("Incorrct credentials");
+            }
+
+            const responsePost = await fetch("http://localhost:8080/account", {
                 method: "POST",
                 headers: {"Accept": "application/json", "Content-Type": "application/json"},
                 body: JSON.stringify({firstName, LastName, addressOne, addressTwo, city, states, zipCode, phone, email})
             });
-            const status = response.status;
-            const responseJSON = await response.json();
+            const status = responsePost.status;
+            const responseJSON = await responsePost.json();
             console.log("responseJSON", responseJSON);
-
-            if (status === 200) {
+            if (status === 201) {
                 navigate("/");
             }
             else {
