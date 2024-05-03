@@ -23,10 +23,9 @@ const AccountForm = () => {
         try
         {
             event.preventDefault();
-            const responseGET = await fetch("http://localhost:8080/account", {
+            const responseGET = await fetch("http://localhost:8080/accountGet", {
                 method: "GET",
-                headers: {"Accept": "application/json", "Content-Type": "application/json"},
-                body: JSON.stringify({firstName, LastName, addressOne, addressTwo, city, states, zipCode, phone, email})
+                headers: {"Accept": "application/json", "Content-Type": "application/json"}
             });
             const statusGet = responseGET.status;
             const responseJSONGet = await responseGET.json();
@@ -41,7 +40,7 @@ const AccountForm = () => {
                 alert("Incorrct credentials");
             }
 
-            const responsePut = await fetch("http://localhost:8080/account", {
+            const responsePut = await fetch("http://localhost:8080/accountPut", {
                 method: "PUT",
                 headers: {"Accept": "application/json", "Content-Type": "application/json"},
                 body: JSON.stringify({firstName, LastName, addressOne, addressTwo, city, states, zipCode, phone, email})
@@ -59,7 +58,7 @@ const AccountForm = () => {
                 alert("Incorrct credentials");
             }
 
-            const responsePost = await fetch("http://localhost:8080/account", {
+            const responsePost = await fetch("http://localhost:8080/accountCreate", {
                 method: "POST",
                 headers: {"Accept": "application/json", "Content-Type": "application/json"},
                 body: JSON.stringify({firstName, LastName, addressOne, addressTwo, city, states, zipCode, phone, email})

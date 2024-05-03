@@ -17,7 +17,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home loggedIn={loggedIn} />}>
-          <Route path="registration" element={<RegistrationForm h/>} />
+          <Route path="registration" element={<RegistrationForm handleLogin={handleSessinState}/>} />
           <Route path="account" element={<AccountForm />} />
           <Route path="login" element={<LogInForm handleLogin={handleSessinState} />} />
           <Route path="logout" element={<Logout handleLogOut={handleSessinState} />} />

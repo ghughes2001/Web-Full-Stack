@@ -16,7 +16,6 @@ const LogInForm = (props) => {;
         try
         {
             event.preventDefault();
-            handleLogin(true)
             const response = await fetch("http://localhost:8080/login", {
                 method: "POST",
                 headers: {"Accept": "application/json", "Content-Type": "application/json"},
@@ -27,6 +26,7 @@ const LogInForm = (props) => {;
             console.log("responseJSON", responseJSON);
 
             if (status === 200) {
+                handleLogin(true)
                 navigate("/");
             }
             else if (status === 400)
