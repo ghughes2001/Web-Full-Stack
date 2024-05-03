@@ -1,24 +1,24 @@
-const dbClient = require('../db/client');
+const dbClient = require('../client');
 
-class UserAccountsRepository {
+class UserAccountDetailsRepository {
     constructor() {
     }
 
-    async insert(userName, password) {
+    async insert(username, password) {
         const sql = `INSERT INTO user_accounts (user_name, password) 
                      VALUES ($1, $2)
                      RETURNING id`;
-        const values = [userName, password];
+        const values = [username, password];
         const results = await dbClient.query(sql, values);
         return results.rows[0];
     }
 
-    async select(userName) {
+    async select(username) {
         const sql = `SELECT id, user_name, password FROM user_accounts WHERE user_name = $1`;
-        const values = [userName];
+        const values = [username];
         const results = await dbClient.query(sql, values);
         return results.rows[0];
     }
 }
 
-module.exports = UserAccountsRepository;
+module.exports = UserAccountDetailsRepository;

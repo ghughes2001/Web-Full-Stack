@@ -1,6 +1,6 @@
-const dbClient = require('../db/client');
+const client = require('../client');
 
-class UserAccountDetailsRepository  {
+class UserAccountDetails  {
     constructor() {
     }
 
@@ -13,7 +13,7 @@ class UserAccountDetailsRepository  {
                      RETURNING id`;
         const values = [userId, firstName, lastName, address1, address2,
             city, state, zipCode, phoneNumber, email];
-        const results = await dbClient.query(sql, values);
+        const results = await client.query(sql, values);
         return results.rows[0];
     }
 
@@ -33,7 +33,7 @@ class UserAccountDetailsRepository  {
                      RETURNING id`;
         const values = [firstName, lastName, address1, address2,
             city, state, zipCode, phoneNumber, email, userId];
-        const results = await dbClient.query(sql, values);
+        const results = await client.query(sql, values);
         return results.rows[0];
     }
 
@@ -42,9 +42,9 @@ class UserAccountDetailsRepository  {
                             city, state, zip_code, phone_number, email
                      FROM user_account_details WHERE user_id = $1`;
         const values = [userId];
-        const results = await dbClient.query(sql, values);
+        const results = await client.query(sql, values);
         return results.rows[0];
     }
 }
 
-module.exports = UserAccountDetailsRepository;
+module.exports = UserAccountDetails;
